@@ -1,13 +1,13 @@
 const medoids = [
   {
-    name: "DroneTech",
+    business_name: "DroneTech",
     owner: "Роман",
     category: "IT",
     description: "Розробка дронів та електроніки",
     link: "https://t.me/example"
   },
   {
-    name: "WoodCraft",
+    business_name: "WoodCraft",
     owner: "Іван",
     category: "Будівництво",
     description: "Дерев'яні конструкції та меблі",
