@@ -6,7 +6,7 @@ let currentCategory = "all";
 
 function getCategories() {
   const cats = medoids.map(m => m.category).filter(Boolean);
-  return ["all", ...new Set(cats)];
+  return ["Усі", ...new Set(cats)];
 }
 
 function renderFilters() {
