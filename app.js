@@ -2,7 +2,7 @@ const searchInput = document.getElementById("search");
 const filtersContainer = document.getElementById("filters");
 const cardsContainer = document.getElementById("cards");
 
-let currentCategory = "all";
+let currentCategory = "Усі";
 
 function getCategories() {
   const cats = medoids.map(m => m.category).filter(Boolean);
@@ -46,7 +46,7 @@ function getFilteredData() {
       category.toLowerCase().includes(query);
 
     const matchesCategory =
-      currentCategory === "all" || category === currentCategory;
+      currentCategory === "Усі" || category === currentCategory;
 
     return matchesSearch && matchesCategory;
   });
