@@ -4,13 +4,11 @@ const cardsContainer = document.getElementById("cards");
 
 let currentCategory = "all";
 
-// Отримати всі категорії
 function getCategories() {
-  const cats = medoids.map(m => m.category);
+  const cats = medoids.map(m => m.category).filter(Boolean);
   return ["all", ...new Set(cats)];
 }
 
-// Малюємо кнопки
 function renderFilters() {
   const categories = getCategories();
 
@@ -26,31 +24,34 @@ function renderFilters() {
   `).join("");
 }
 
-// Зміна категорії
 function setCategory(cat) {
   currentCategory = cat;
   renderFilters();
   renderCards();
 }
 
-// Фільтрація + пошук
 function getFilteredData() {
   const query = searchInput.value.toLowerCase();
 
   return medoids.filter(m => {
+    const businessName = m.business_name || "";
+    const owner = m.owner || "";
+    const description = m.description || "";
+    const category = m.category || "";
+
     const matchesSearch =
-      m.name.toLowerCase().includes(query) ||
-      m.owner.toLowerCase().includes(query) ||
-      m.description.toLowerCase().includes(query);
+      businessName.toLowerCase().includes(query) ||
+      owner.toLowerCase().includes(query) ||
+      description.toLowerCase().includes(query) ||
+      category.toLowerCase().includes(query);
 
     const matchesCategory =
-      currentCategory === "all" || m.category === currentCategory;
+      currentCategory === "all" || category === currentCategory;
 
     return matchesSearch && matchesCategory;
   });
 }
 
-// Малюємо картки
 function renderCards() {
   const data = getFilteredData();
 
@@ -61,30 +62,25 @@ function renderCards() {
 
   cardsContainer.innerHTML = data.map(m => `
     <div class="bg-white p-4 rounded-xl shadow">
+      <div class="text-xs text-gray-500 mb-1">${m.category || ""}</div>
 
-      <div class="text-xs text-gray-500 mb-1">${m.category}</div>
-
-      <h2 class="text-lg font-semibold">${m.name}</h2>
+      <h2 class="text-lg font-semibold">${m.business_name || "Без назви"}</h2>
 
       <div class="text-sm text-gray-600 mb-2">
-        👤 ${m.owner}
+        👤 ${m.owner || "Не вказано"}
       </div>
 
-      <p class="text-sm mb-3">${m.description}</p>
+      <p class="text-sm mb-3">${m.description || ""}</p>
 
-      <a
-        href="${m.link}"
-        target="_blank"
-        class="inline-block bg-black text-white px-3 py-1 rounded-lg"
-      >
-        Зв'язатися
-      </a>
-
+      ${
+        m.link
+          ? `<a href="${m.link}" target="_blank" class="inline-block bg-black text-white px-3 py-1 rounded-lg">Зв'язатися</a>`
+          : ""
+      }
     </div>
   `).join("");
 }
 
-// Ініціалізація
 searchInput.addEventListener("input", renderCards);
 
 renderFilters();
