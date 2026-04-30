@@ -4,70 +4,73 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Економіка Медоїдів</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-[#f3efe6] text-[#2b241c]">
 
-  <div class="max-w-4xl mx-auto p-4">
+  <div class="max-w-4xl mx-auto my-6 p-5 bg-[#fffaf0] rounded-2xl shadow-md border border-[#e5dcc8]">
 
-    <h1 class="text-2xl font-bold mb-4 text-center">
-      🦡 Економіка Медоїдів
-    </h1>
+    <header class="mb-6 text-center">
+      <h1 class="text-3xl font-semibold tracking-tight">
+        🦡 Економіка Медоїдів
+      </h1>
+      <p class="mt-2 text-sm text-[#6b5a46]">
+        Спільний каталог маленьких справ, майстерень, послуг і проєктів
+      </p>
+    </header>
 
-    <!-- Пошук -->
     <input
       id="search"
       type="text"
-      placeholder="Пошук..."
-      class="w-full p-3 mb-4 border rounded-xl"
+      placeholder="Пошук за назвою, власником, описом або категорією..."
+      class="w-full p-3 mb-4 border border-[#e5dcc8] bg-[#fdfaf3] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d89b2b]"
     />
 
-    <!-- Категорії -->
-    <div id="filters" class="flex flex-wrap gap-2 mb-4"></div>
+    <div id="filters" class="flex flex-wrap gap-2 mb-5"></div>
 
-    <!-- Картки -->
     <div id="cards" class="grid gap-4"></div>
 
-    <!-- Футер -->
-    <footer class="mt-12 pt-6 border-t text-sm text-gray-600">
+    <footer class="mt-12 pt-6 border-t border-[#e5dcc8] text-sm text-[#5a4a3a]">
 
-  <div class="text-center mb-4">
-    Хочеш додати бізнес?
-    <br>
-    <a href="https://forms.gle/gur1BNjEr6W9PoFo6"
-       class="text-blue-500 underline">
-      Заповни форму
-    </a>
-  </div>
+      <div class="text-center mb-5">
+        Хочеш додати бізнес?
+        <br>
+        <a href="https://forms.gle/gur1BNjEr6W9PoFo6"
+           target="_blank"
+           class="text-[#b7791f] underline hover:text-[#92400e]">
+          Заповни форму
+        </a>
+      </div>
 
-  <div class="flex flex-col items-center gap-2 text-xs text-gray-500">
+      <div class="flex flex-col items-center gap-2 text-xs text-[#6b5a46]">
 
-    <div>
-      Дані:
-      <a href="https://docs.google.com/spreadsheets/d/ТУТ_ТВОЄ_ID"
-         target="_blank"
-         class="underline hover:text-black">
-        Google Sheets
-      </a>
-    </div>
+        <div>
+          Дані:
+          <a href="https://docs.google.com/spreadsheets/d/ТУТ_ТВОЄ_ID"
+             target="_blank"
+             class="underline hover:text-[#2b241c]">
+            Google Sheets
+          </a>
+        </div>
 
-    <div>
-      Код:
-      <a href="https://github.com/pokaznoy/medoid-economy"
-         target="_blank"
-         class="underline hover:text-black">
-        GitHub репозиторій
-      </a>
-    </div>
+        <div>
+          Код:
+          <a href="https://github.com/pokaznoy/medoid-economy"
+             target="_blank"
+             class="underline hover:text-[#2b241c]">
+            GitHub репозиторій
+          </a>
+        </div>
 
-    <div class="opacity-60 mt-2">
-      🦡 Економіка Медоїдів — спільний каталог
-    </div>
+        <div class="opacity-70 mt-2">
+          🦡 Економіка Медоїдів — дошка своїх справ
+        </div>
 
-  </div>
+      </div>
 
-</footer>
+    </footer>
 
   </div>
 
