@@ -1,12 +1,5 @@
 const medoids = [
   {
-    "business_name": "тест",
-    "owner": "тест",
-    "category": "Одяг",
-    "description": "тест",
-    "link": "https://www.youtube.com/@PokazoyGaming"
-  },
-  {
     "business_name": "Ryshelie",
     "owner": "Mariia",
     "category": "Текстиль",
