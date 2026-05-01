@@ -1,5 +1,12 @@
 const medoids = [
   {
+    "business_name": "PremiumTea",
+    "owner": "Мірошник Александр",
+    "category": "Продукти",
+    "description": "Інтернет-магазин найсмачнішого чаю в Україні.",
+    "link": "https://premiumtea.com.ua/"
+  },
+  {
     "business_name": "Ryshelie",
     "owner": "Mariia",
     "category": "Текстиль",
